@@ -47,10 +47,13 @@ var listEmployees = function () {
 //calculate total salary expenses
 var calcSalary = function (){
   var totalSalary = 0;
+  var monthlySalary = 0;
     for(var i=0; i<allEmployees.length; i++){
     totalSalary += parseInt(allEmployees[i].sal);
+    monthlySalary = totalSalary/12;
     }
-  document.getElementById('calculation').innerHTML = 'The current total salary expense is: ' + totalSalary;
+  // document.getElementById('calculation').innerHTML = 'The current total annual salary expense is: ' + totalSalary;
+  document.getElementById('calculation').innerHTML = 'The current total monthly salary expense is: ' + monthlySalary;
 };
 //Remove employee from Dom, recalculate salary
 var removeEmp = function (i){
