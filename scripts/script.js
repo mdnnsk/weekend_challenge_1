@@ -37,10 +37,9 @@ var addEmployee = function (){
 var listEmployees = function () {
   var outputText = '';
   if (allEmployees.length === 0){ outputText = 'No Employees entered';}
-  else if (allEmployees.length > 0) {
+    else if (allEmployees.length > 0) {
      for(var i=0; i<allEmployees.length; i++){
-    outputText += 'Name: ' + allEmployees[i].fname +' '+ allEmployees[i].lname +'   EID#: ' + allEmployees[i].eidn +'   Job Title: '+ allEmployees[i].jtitle +'   Salary: ' + allEmployees[i].sal+' <button onClick="removeEmp(' + i + ')">' + 'Remove' + "</button>" + '</p>';
-
+       outputText += 'Name: ' + allEmployees[i].fname +' '+ allEmployees[i].lname +'   EID#: ' + allEmployees[i].eidn +'   Job Title: '+ allEmployees[i].jtitle +'   Salary: ' + allEmployees[i].sal+' <button onClick="removeEmp(' + i + ')">' + 'Remove' + "</button>" + '</p>';
   }}
   document.getElementById('outputDiv').innerHTML ='<p>' + outputText + '</p>';
 };
@@ -48,15 +47,15 @@ var listEmployees = function () {
 //calculate total salary expenses
 var calcSalary = function (){
   var totalSalary = 0;
-  for(var i=0; i<allEmployees.length; i++){
+    for(var i=0; i<allEmployees.length; i++){
     totalSalary += parseInt(allEmployees[i].sal);
-  }
+    }
   document.getElementById('calculation').innerHTML = 'The current total salary expense is: ' + totalSalary;
 };
 //Remove employee from Dom, recalculate salary
 var removeEmp = function (i){
   allEmployees.splice(i, 1);
-console.log(allEmployees);
-listEmployees();
-calcSalary();
+  // console.log(allEmployees);
+  listEmployees();
+  calcSalary();
 };
